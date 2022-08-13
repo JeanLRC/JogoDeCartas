@@ -12,30 +12,30 @@ import javax.persistence.Table;
 @Embeddable
 @Table(name = "tb_card_attributes")
 public class Attributes {
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "attributes_id")
 	private Long id;
-	
+
 	private Integer hp;
 	private Integer attack;
 	private Integer defense;
 	private Integer specialAttack;
-	private Integer specialDefence;
+	private Integer specialDefense;
 	private Integer speed;
 
 	public Attributes() {
 	}
 
-	public Attributes(Integer hp, Integer attack, Integer defense, Integer specialAttack, Integer specialDefence,
+	public Attributes(Integer hp, Integer attack, Integer defense, Integer specialAttack, Integer specialDefense,
 			Integer speed) {
 		super();
 		this.hp = hp;
 		this.attack = attack;
 		this.defense = defense;
 		this.specialAttack = specialAttack;
-		this.specialDefence = specialDefence;
+		this.specialDefense = specialDefense;
 		this.speed = speed;
 	}
 
@@ -71,12 +71,12 @@ public class Attributes {
 		this.specialAttack = specialAttack;
 	}
 
-	public Integer getSpecialDefence() {
-		return specialDefence;
+	public Integer getSpecialDefense() {
+		return specialDefense;
 	}
 
-	public void setSpecialDefence(Integer specialDefence) {
-		this.specialDefence = specialDefence;
+	public void setSpecialDefense(Integer specialDefense) {
+		this.specialDefense = specialDefense;
 	}
 
 	public Integer getSpeed() {

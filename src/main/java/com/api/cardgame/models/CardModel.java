@@ -10,6 +10,8 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 
 @Entity
 @Table(name = "tb_cards")
@@ -19,11 +21,13 @@ public class CardModel {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "card_id")
 	private Long id;
+	@NotBlank
 	private String name;
-	
+
 	@OneToOne(cascade = CascadeType.ALL)
 	@Embedded
 	@JoinColumn(name = "attributes_id", referencedColumnName = "attributes_id")
+	@NotNull
 	private Attributes attributes;
 
 	public CardModel() {
