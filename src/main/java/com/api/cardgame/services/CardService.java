@@ -54,9 +54,9 @@ public class CardService {
 	public void deleteCardById(Long id) {
 		Optional<CardModel> card = repository.findById(id);
 
-		if (card.isEmpty())
-			throw new ResponseStatusException(HttpStatus.BAD_REQUEST);
-
+		if (card.isEmpty()) {
+			throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Card not found");
+		}
 		repository.deleteById(id);
 	}
 

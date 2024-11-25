@@ -27,7 +27,7 @@ public class CardModel {
 	@OneToOne(cascade = CascadeType.ALL)
 	@Embedded
 	@JoinColumn(name = "attributes_id", referencedColumnName = "attributes_id")
-	@NotNull
+	@NotNull(message = "All attriutes are required")
 	private Attributes attributes;
 
 	public CardModel() {

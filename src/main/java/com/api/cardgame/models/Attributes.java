@@ -7,6 +7,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
 
 @Entity
 @Embeddable
@@ -18,11 +19,22 @@ public class Attributes {
 	@Column(name = "attributes_id")
 	private Long id;
 
+	@NotNull(message = "Attriute hp is required")
 	private Integer hp;
+
+	@NotNull(message = "Attribute attack is required")
 	private Integer attack;
+
+	@NotNull(message = "Attribute defense is required")
 	private Integer defense;
+
+	@NotNull(message = "Attribute special-attack is required")
 	private Integer specialAttack;
+
+	@NotNull(message = "Attribute special-defense is required")
 	private Integer specialDefense;
+
+	@NotNull(message = "Attribute speed is required")
 	private Integer speed;
 
 	public Attributes() {
